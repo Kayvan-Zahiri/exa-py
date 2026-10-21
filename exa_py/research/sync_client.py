@@ -23,7 +23,7 @@ from .models import (
     ResearchDto,
     ResearchEvent,
     ListResearchResponseDto,
-    ResearchModel,
+    KnownResearchModel,
 )
 from .utils import (
     is_pydantic_model,
@@ -69,7 +69,7 @@ class ResearchClient(ResearchBaseClient):
         self,
         *,
         instructions: str,
-        model: ResearchModel = "exa-research-fast",
+        model: KnownResearchModel = "exa-research-fast",
         **extra: Unpack[ExtraRequestOptions],
     ) -> ResearchDto: ...
 
@@ -78,7 +78,7 @@ class ResearchClient(ResearchBaseClient):
         self,
         *,
         instructions: str,
-        model: ResearchModel = "exa-research-fast",
+        model: KnownResearchModel = "exa-research-fast",
         output_schema: Dict[str, Any],
         **extra: Unpack[ExtraRequestOptions],
     ) -> ResearchDto: ...
@@ -88,7 +88,7 @@ class ResearchClient(ResearchBaseClient):
         self,
         *,
         instructions: str,
-        model: ResearchModel = "exa-research-fast",
+        model: KnownResearchModel = "exa-research-fast",
         output_schema: Type[T],
         **extra: Unpack[ExtraRequestOptions],
     ) -> ResearchDto: ...
@@ -97,7 +97,7 @@ class ResearchClient(ResearchBaseClient):
         self,
         *,
         instructions: str,
-        model: ResearchModel = "exa-research-fast",
+        model: KnownResearchModel = "exa-research-fast",
         output_schema: Optional[Union[Dict[str, Any], Type[BaseModel]]] = None,
         **extra: Unpack[ExtraRequestOptions],
     ) -> ResearchDto:

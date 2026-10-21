@@ -23,7 +23,7 @@ from .models import (
     ResearchDto,
     ResearchEvent,
     ListResearchResponseDto,
-    ResearchModel,
+    KnownResearchModel,
 )
 from .utils import (
     async_stream_sse_events,
@@ -70,7 +70,7 @@ class AsyncResearchClient(AsyncResearchBaseClient):
         self,
         *,
         instructions: str,
-        model: ResearchModel = "exa-research-fast",
+        model: KnownResearchModel = "exa-research-fast",
         **extra: Unpack[ExtraRequestOptions],
     ) -> ResearchDto: ...
 
